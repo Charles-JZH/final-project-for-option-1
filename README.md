@@ -40,4 +40,29 @@ Below are the steps to get my application running on GCP Kubernetes.
 10. As to the hadoop, once you run it in a Pod, you have to enter in that pod using "kubectl exec -it --namespace=default $pod_name -- sh". Then, you should run the run.sh script using "sh run.sh". After that, you will get into the console of the master node (namely the namenode in Hadoop). You should input "./start-hadoop.sh" to start the master node. After finish doing these steps, you can exit and come back to the Cloud Shell.
 <img width="70%" height="70%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/13.png"/>
 
+11. Then, you can input "kubectl get pods" and "kubectl get svc" to see all pods and services.
+<img width="50%" height="50%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/14.png"/>
 
+12. After getting all of these four external IP address, come back to the code of driver and modify the code.
+<img width="30%" height="30%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/15.png"/>
+
+13. Then, deploy the driver to the GCP Kubernetes using the same method as before. 
+<p float="left">
+  <img width="30%" height="30%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/16.png"/>
+  <img width="50%" height="50%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/17.png"/>
+</p>
+
+14. Now you can see all of the five running modules on the GCP Kubernetes.
+<img width="90%" height="90%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/18.png"/>
+
+15. Go to the address of the driver, you can see the GUI of the whole project. Through this GUI, you can go to one of Jupyter-notebok, Spark, Hadoop, and Sonar.
+<img src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/19.png"/>
+
+16. Here are Jupyter-notebok, Spark, and Soanr.
+<img width="70%" height="70%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/20.png"/>
+<img width="70%" height="70%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/21.png"/>
+<img width="70%" height="70%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/24.png"/>
+
+17. As to the Hadoop, you can see there are two slaves running. Plus the master node, there are three running nodes totally.
+<img width="80%" height="80%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/22.png"/>
+<img width="90%" height="90%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/23.png"/>
