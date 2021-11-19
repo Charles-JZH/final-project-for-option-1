@@ -3,6 +3,13 @@
 ## Walkthrough video: 
 https://www.youtube.com/watch?v=NRrWI2Poaf4  
 
+## Dockerhub address:
+https://hub.docker.com/repository/docker/charlesjiang1997/driver  
+https://hub.docker.com/repository/docker/charlesjiang1997/spark  
+https://hub.docker.com/repository/docker/charlesjiang1997/hadoop  
+https://hub.docker.com/repository/docker/charlesjiang1997/jupyter    
+https://hub.docker.com/repository/docker/charlesjiang1997/sonar  
+
 ## Deployment steps on GCP Kubernetes:
 Below are the steps to get my application running on GCP Kubernetes.  
 1. Navigate to the GCP console and select a project.
