@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadoop-deployment
+  labels:
+    app: hadoop-deployment
+spec:
+  selector:
+     matchLabels:
+       app: hadoop-deployment
+  replicas: 1
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: hadoop-deployment
+    spec:
+      containers:
+        - image: charlesjiang1997/hadoop:v1
+          imagePullPolicy: Always
+          name: hadoop-deployment
+          ports:
+            - containerPort: 50070
+          securityContext:
+            privileged: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hadoop-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 50070
+      protocol: TCP
+      targetPort: 50070
+  selector:
+    app: hadoop-deployment

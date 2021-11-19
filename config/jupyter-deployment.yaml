@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-deployment
+  labels:
+    app: jupyter-deployment
+spec:
+  selector:
+     matchLabels:
+       app: jupyter-deployment
+  replicas: 1
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: jupyter-deployment
+    spec:
+      containers:
+        - image: charlesjiang1997/jupyter:v1
+          imagePullPolicy: Always
+          name: jupyter-deployment
+          ports:
+            - containerPort: 8888
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jupyter-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8888
+      protocol: TCP
+      targetPort: 8888
+  selector:
+    app: jupyter-deployment
