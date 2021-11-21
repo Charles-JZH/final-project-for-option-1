@@ -10,6 +10,10 @@ https://hub.docker.com/repository/docker/charlesjiang1997/hadoop
 https://hub.docker.com/repository/docker/charlesjiang1997/jupyter    
 https://hub.docker.com/repository/docker/charlesjiang1997/sonar  
 
+## The way to modify IP address and port in the driver
+You can modify the file in driver/src/views/Initial.vue to make it compatible with exported ports.
+<img width="30%" height="30%" src="https://github.com/Charles-JZH/final-project-for-option-1/blob/main/steps/15.png"/>
+
 ## Deployment steps on GCP Kubernetes:
 Below are the steps to get my application running on GCP Kubernetes.  
 1. Navigate to the GCP console and select a project.
